@@ -1,0 +1,32 @@
+<!-- To create a simple HTML and CSS and javascript assignment that allows users to perform basic arithmetic operations on two numbers (addition, subtraction, multiplication, and division), you can use the following example -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Simple Calculator</h2>
+        <label for="num1">Number 1:</label>
+        <input type="number" id="num1" placeholder="Enter number 1"><br><br>
+
+        <label for="num2">Number 2:</label>
+        <input type="number" id="num2" placeholder="Enter number 2"><br><br>
+
+        <div class="operations">
+            <button onclick="calculate('add')">+</button>
+            <button onclick="calculate('subtract')">-</button>
+            <button onclick="calculate('multiply')">*</button>
+            <button onclick="calculate('divide')">/</button>
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

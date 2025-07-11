@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        input, button, div {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Number Operations</h2>
+
+    <label for="inputNumber">Enter a Number: </label>
+    <input type="number" id="inputNumber" placeholder="Enter a number">
+
+    <button onclick="performOperations()">Calculate</button>
+
+    <div id="outputResult"></div>
+
+    <script>
+        function performOperations() {
+            // Get the input value
+            var inputNumber = document.getElementById("inputNumber").value;
+
+            // Calculate factorial
+            var factorial = 1;
+            for (var i = 1; i <= inputNumber; i++) {
+                factorial *= i;
+            }
+
+            // Generate multiplication table
+            var multiplicationTable = "";
+            for (var j = 1; j <= 10; j++) {
+                multiplicationTable += inputNumber + " * " + j + " = " + (inputNumber * j) + "<br>";
+            }
+
+            // Check if it's a perfect number
+            var sum = 0;
+            for (var k = 1; k < inputNumber; k++) {
+                if (inputNumber % k === 0) {
+                    sum += k;
+                }
+            }
+            var isPerfect = (sum === inputNumber);
+
+            // Display the results
+            var resultText = "Factorial: " + factorial + "<br>";
+            resultText += "Multiplication Table:<br>" + multiplicationTable + "<br>";
+            resultText += "Perfect Number: " + (isPerfect ? "Yes" : "No");
+
+            // Update the output div
+            document.getElementById("outputResult").innerHTML = resultText;
+        }
+    </script>
+
+</body>
+</html>
